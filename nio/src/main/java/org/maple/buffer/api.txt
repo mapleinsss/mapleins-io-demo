@@ -1,0 +1,24 @@
+Buffer clear() 清空缓冲区并返回对缓冲区的引用
+Buffer flip() 为 将缓冲区的界限设置为当前位置，并将当前位置充值为 0
+int capacity() 返回 Buffer 的 capacity 大小
+boolean hasRemaining() 判断缓冲区中是否还有元素
+int limit() 返回 Buffer 的界限(limit) 的位置
+Buffer limit(int n) 将设置缓冲区界限为 n, 并返回一个具有新 limit 的缓冲区对象
+Buffer mark() 对缓冲区设置标记
+int position() 返回缓冲区的当前位置 position
+Buffer position(int n) 将设置缓冲区的当前位置为 n , 并返回修改后的 Buffer 对象
+int remaining() 返回 position 和 limit 之间的元素个数
+Buffer reset() 将位置 position 转到以前设置的 mark 所在的位置
+Buffer rewind() 将位置设为为 0， 取消设置的 mark
+
+Buffer 所有子类提供了两个用于数据操作的方法：get()put() 方法
+
+取获取 Buffer中的数据
+get() ：读取单个字节
+get(byte[] dst)：批量读取多个字节到 dst 中
+get(int index)：读取指定索引位置的字节(不会移动 position)
+
+放到 入数据到 Buffer 中 中
+put(byte b)：将给定单个字节写入缓冲区的当前位置
+put(byte[] src)：将 src 中的字节写入缓冲区的当前位置
+put(int index, byte b)：将指定字节写入缓冲区的索引位置(不会移动 position)

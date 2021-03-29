@@ -1,0 +1,9 @@
+int read(ByteBuffer dst) 从 Channel 到 中读取数据到  ByteBuffer
+long  read(ByteBuffer[] dsts) 将  Channel 到 中的数据“分散”到  ByteBuffer[]
+int  write(ByteBuffer src) 将  ByteBuffer 到 中的数据写入到  Channel
+long write(ByteBuffer[] srcs) 将  ByteBuffer[] 到 中的数据“聚集”到  Channel
+long position() 返回此通道的文件位置
+FileChannel position(long p) 设置此通道的文件位置
+long size() 返回此通道的文件的当前大小
+FileChannel truncate(long s) 将此通道的文件截取为给定大小
+void force(boolean metaData) 强制将所有对此通道的文件更新写入到存储设备中
